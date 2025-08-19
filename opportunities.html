@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>الفرص التطوعية</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cairo&display=swap');
+  body {
+    background: linear-gradient(135deg, #0d1b2a, #1b263b);
+    font-family: 'Cairo', sans-serif;
+    color: #eee;
+    margin: 0; padding: 20px;
+  }
+  header {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #00ffcc;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px #00ffcc;
+  }
+  .opportunities {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .opportunity {
+    background: #12233f;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    padding: 20px;
+    box-shadow: 0 0 12px rgba(0, 255, 204, 0.5);
+    transition: transform 0.3s ease;
+  }
+  .opportunity:hover {
+    transform: scale(1.05);
+  }
+  .opportunity h3 {
+    margin: 0 0 10px 0;
+    color: #00ffcc;
+  }
+  .opportunity p {
+    margin: 0 0 15px 0;
+    color: #ccc;
+  }
+  .join-btn {
+    background: #00ffcc;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 10px;
+    color: #022;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  .join-btn:hover {
+    background: #00cc99;
+    color: #fff;
+  }
+  .nav-buttons {
+    max-width: 600px;
+    margin: 0 auto 40px;
+    text-align: center;
+  }
+  .nav-buttons button {
+    background: transparent;
+    border: 2px solid #00ffcc;
+    color: #00ffcc;
+    font-weight: 700;
+    font-size: 16px;
+    padding: 10px 25px;
+    margin: 0 10px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  .nav-buttons button:hover {
+    background: #00ffcc;
+    color: #022;
+  }
+</style>
+</head>
+<body>
+
+<header>الفرص التطوعية</header>
+
+<div class="nav-buttons">
+  <button onclick="location.href='student.html'">صفحة الطالب</button>
+  <button onclick="location.href='logout.html'">تسجيل خروج</button>
+</div>
+
+<div class="opportunities">
+  <div class="opportunity">
+    <h3>تنظيم معرض طموح</h3>
+    <p>فرصة التطوع للمشاركة في تنظيم معرض طموح داخل الجامعة.</p>
+    <button class="join-btn" onclick="joinOpportunity('تنظيم معرض طموح')">انضم الآن</button>
+  </div>
+  <div class="opportunity">
+    <h3>احتفال اليوم الوطني</h3>
+    <p>فرصة التطوع للمشاركة في تنظيم احتفال اليوم الوطني.</p>
+    <button class="join-btn" onclick="joinOpportunity('احتفال اليوم الوطني')">انضم الآن</button>
+  </div>
+</div>
+
+<script>
+  function joinOpportunity(name) {
+    alert('شكراً لانضمامك لفرصة: ' + name);
+    // هنا تضيف كود حفظ المشاركة بالفرصة أو أي منطق آخر
+  }
+</script>
+
+</body>
+</html>

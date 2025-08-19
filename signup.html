@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>إنشاء حساب - نادي التطوع</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    input {
+      background: #111;
+      color: #fff;
+      border: 1px solid #444;
+      border-radius: 6px;
+      padding: 10px;
+      margin: 10px 0;
+      width: 300px;
+    }
+
+    button {
+      background-color: #fff;
+      color: #000;
+      padding: 10px 25px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background-color: #ccc;
+    }
+
+    .error {
+      color: red;
+      margin-top: 10px;
+    }
+
+    .footer {
+      margin-top: 50px;
+      font-size: 14px;
+      color: #aaa;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>إنشاء حساب جديد</h1>
+
+  <input type="text" id="name" placeholder="الاسم الثلاثي" />
+  <input type="text" id="studentId" placeholder="الرقم الجامعي" />
+  <input type="email" id="email" placeholder="البريد الإلكتروني" />
+  <input type="password" id="password" placeholder="كلمة المرور" />
+  <button onclick="signUp()">إنشاء حساب</button>
+
+  <p class="error" id="errorMsg"></p>
+
+  <div class="footer">
+    تم تطوير هذا الموقع من قبل الطالب مبارك عيسى سحاب الرشيدي
+  </div>
+
+  <script type="module">
+    // استيراد Firebase
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
+    import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js";
+
+    // إعدادات Firebase
+    const firebaseConfig = {
+      apiKey: "AIzaSyBaibggQoF8H01sEDbctVqRSLoBOCwiuSA",
+      authDomain: "volunteer-app-68f28.firebaseapp.com",
+      projectId: "volunteer-app-68f28",
+      storageBucket: "volunteer-app-68f28.appspot.com",
+      messagingSenderId: "212714716420",
+      appId: "1:212714716420:web:5554b1bfdf9085acd3a451",
+      measurementId: "G-K3RVTL5VVW"
+    };
+
+    // تهيئة التطبيق
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    // وظيفة إنشاء الحساب
+    window.signUp = function () {
+      const name = document.getElementById("name").value.trim();
+      const studentId = document.getElementById("studentId").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value.trim();
+      const errorMsg = document.getElementById("errorMsg");
+
+      if (!name || !studentId || !email || !password) {
+        errorMsg.textContent = "يرجى تعبئة جميع الحقول.";
+        return;
+      }
+
+      createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          alert("تم إنشاء الحساب بنجاح!");
+          // يمكنك تخزين الاسم والرقم الجامعي في قاعدة بيانات لاحقًا
+          window.location.href = "opportunities.html"; // عدل إلى اسم صفحة الفرص لديك
+        })
+        .catch((error) => {
+          if (error.code === "auth/email-already-in-use") {
+            errorMsg.textContent = "البريد الإلكتروني مستخدم مسبقًا.";
+          } else if (error.code === "auth/weak-password") {
+            errorMsg.textContent = "كلمة المرور ضعيفة (6 أحرف على الأقل).";
+          } else {
+            errorMsg.textContent = error.message;
+          }
+        });
+    };
+  </script>
+</body>
+</html>

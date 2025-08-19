@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>معلومات الطالب</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cairo&display=swap');
+  body {
+    background: linear-gradient(135deg, #0d1b2a, #1b263b);
+    font-family: 'Cairo', sans-serif;
+    color: #eee;
+    margin: 0; padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  .container {
+    background: #12233f;
+    border-radius: 20px;
+    padding: 30px 40px;
+    max-width: 400px;
+    width: 100%;
+    box-shadow: 0 0 20px rgba(0, 255, 204, 0.6);
+    text-align: center;
+  }
+  h1 {
+    color: #00ffcc;
+    margin-bottom: 25px;
+    text-shadow: 0 0 10px #00ffcc;
+  }
+  .info {
+    text-align: right;
+    margin-bottom: 20px;
+    font-size: 18px;
+  }
+  .label {
+    color: #00ffcc;
+    font-weight: 700;
+    display: inline-block;
+    width: 140px;
+  }
+  .value {
+    color: #ccc;
+  }
+  .back-btn {
+    margin-top: 25px;
+    background: #00ffcc;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 15px;
+    font-weight: 700;
+    color: #022;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  .back-btn:hover {
+    background: #00cc99;
+    color: #fff;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>معلومات الطالب</h1>
+  
+  <div class="info"><span class="label">الاسم الثلاثي:</span> <span class="value" id="studentName">مبارك عيسى سحاب الرشيدي</span></div>
+  <div class="info"><span class="label">الرقم الجامعي:</span> <span class="value" id="studentID">123456789</span></div>
+  <div class="info"><span class="label">عدد المشاركات:</span> <span class="value" id="participations">5</span></div>
+  <div class="info"><span class="label">النقاط المكتسبة:</span> <span class="value" id="points">50</span></div>
+  
+  <button class="back-btn" onclick="location.href='opportunities.html'">العودة إلى الفرص</button>
+</div>
+
+</body>
+</html>

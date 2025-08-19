@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>تسجيل الدخول</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cairo&display=swap');
+  body {
+    background: linear-gradient(135deg, #1a1a1a, #333);
+    font-family: 'Cairo', sans-serif;
+    color: #eee;
+    margin: 0; padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  .login-container {
+    background: #222;
+    padding: 40px 50px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0,255,200,0.4);
+    width: 320px;
+    text-align: center;
+  }
+  h2 {
+    margin-bottom: 30px;
+    color: #00ffcc;
+    letter-spacing: 1.5px;
+  }
+  input[type="email"], input[type="password"] {
+    width: 100%;
+    padding: 12px 15px;
+    margin: 12px 0;
+    border: none;
+    border-radius: 10px;
+    background: #444;
+    color: #eee;
+    font-size: 16px;
+    outline: none;
+    transition: background 0.3s ease;
+  }
+  input[type="email"]:focus, input[type="password"]:focus {
+    background: #555;
+  }
+  button {
+    background: #00ffcc;
+    border: none;
+    color: #222;
+    font-weight: 700;
+    font-size: 18px;
+    padding: 14px 0;
+    width: 100%;
+    border-radius: 12px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background 0.3s ease;
+  }
+  button:hover {
+    background: #00cc99;
+    color: #fff;
+  }
+  .signup-link {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #aaa;
+  }
+  .signup-link a {
+    color: #00ffcc;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .signup-link a:hover {
+    text-decoration: underline;
+  }
+  .footer-note {
+    margin-top: 30px;
+    font-size: 12px;
+    color: #666;
+  }
+</style>
+</head>
+<body>
+  <div class="login-container">
+    <h2>تسجيل الدخول</h2>
+    <input type="email" id="email" placeholder="البريد الإلكتروني" />
+    <input type="password" id="password" placeholder="كلمة المرور" />
+    <button onclick="login()">دخول</button>
+    <div class="signup-link">
+      ليس لديك حساب؟ <a href="signup.html">إنشاء حساب جديد</a>
+    </div>
+    <div class="footer-note">
+      تم تطوير هذا الموقع من قبل الطالب مبارك الرشيدي
+    </div>
+  </div>
+
+  <script>
+    function login() {
+      // هنا تضيف كود تسجيل الدخول أو تضع alert مؤقت
+      alert("أدخل بياناتك ثم اضغط تسجيل الدخول");
+    }
+  </script>
+</body>
+</html>
